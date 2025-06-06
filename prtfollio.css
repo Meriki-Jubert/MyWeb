@@ -1,0 +1,525 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: var(--background);
+    color: var(--text);
+    text-decoration: none;
+}
+:root{
+    --background:rgba(91, 12, 12, 0.776);
+    --text: white;
+    --hover: #0caeff;
+    --h3: #9bb1da;
+    --img: rgba(91, 12, 12, 0.776);
+}
+header{
+    display: flex;
+    font-size: medium;
+    justify-content: space-between;
+    margin-top: 14px;
+    font-weight: 500;
+}
+header svg{
+    width: 19px;
+    color: #0284c7;
+}
+.navi a{
+    display: inline-block;
+    justify-content: space-between;
+    margin-right: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    transition: .9s;
+    opacity: 0;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+   
+}
+.side{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 40%;
+    width: 190px;
+    justify-content: space-between;
+    z-index: 999;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    box-shadow: 10px 0 -10px;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   
+}
+.side a{
+    text-align: center;
+    text-decoration: none;
+    margin-bottom: 12px;
+    color: white;
+    font-size: 20px;
+    transition: 1s,;
+    opacity: 0;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+    transition: 1s;
+}
+
+.side a:hover{
+    color: #07acff; 
+    box-shadow: 3px 3px 5px;
+    text-decoration: overline underline;
+}
+
+.mobile{
+    display: none;
+}
+@media(max-width: 750px){
+    .nav{
+       display: none;
+    }
+    .mobile{
+       display: flex;
+    }
+}
+@media(min-width: 750px){
+    
+    .sld{
+        margin-top: 60px;
+        display: flex;
+        border: 3px solid black;
+        width: 500px;
+        justify-self: center;
+    }
+}
+#act{
+    color: #07acff;
+    text-decoration: underline wavy;
+}
+.navi a:hover{
+    color: #07acff; 
+    box-shadow: 3px 3px 5px;
+    text-decoration: overline underline;
+}
+.logo{
+    font-size: 35px;
+    font-weight: 700 ;
+    margin-left: 10px;
+    transition: .9s;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    animation: slideRight 2s ease forwards;
+    
+}
+.logo:hover{
+    color: #07acff; 
+    box-shadow: 3px 3px 5px;
+    text-decoration: overline underline;
+    z-index: 999;   
+}
+.prt{
+    position: relative;
+    width: 80%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 70px 10%;
+}
+.prt .imge{
+   height: 90%;
+   border: 80px #07acff;
+   border-radius: 60px;
+   
+}
+
+.prt img{
+    border: 50px solid   var(--img);
+    border-radius: 200px;
+    box-shadow: 3px 3px 7px #07acff;
+    opacity: 0;
+    animation: zoomIn 1s ease forwards, floatimage 4s
+    ease-in-out infinite;
+    animation-delay: 2s, 3s;
+}
+.yet{
+    font-size: 32px;
+    font-weight: 700;
+    margin: -3px 0;
+    max-width: 600px;
+}
+.yet h3:nth-of-type(2){
+    margin-bottom: 30px;
+}
+.yet h3{
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: .7s;
+}
+.yet h1{
+    font-size: 56px;
+    font-weight: 700;
+    margin: -3px 0;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1s;
+}
+.yet p{
+    font-size: 16px;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+}
+.yet span{
+    color: #07acff;
+    opacity: 0;
+    animation: slideLeft 2s ease forwards,
+    slideLeft1 2s ease forwards infinite;
+}
+.prt .socials a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    border: 2px solid #07acff;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #0ef;
+    text-decoration: none;
+    margin: 30px 15px 14px 0;
+    box-shadow: 3px 3px 5px #07acff;
+    transition:.5s ease;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+.prt .socials a:hover{
+    box-shadow: 3px 6px 16px #07acff;
+    transition:.5s ease;
+    background: #07acff;
+    
+}
+.btn{
+    display: inline-block;
+    padding: 12px 28px;
+    background: #0ef;
+    border-radius: 40px;
+    box-shadow: 0 0 10px;
+    font-size: 16px;
+    color: #1f242d;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+}
+.bt{
+    color: #1f242d;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+}
+.btn{
+    transition: background-color 1s, box-shadow 1s;
+}
+.btn:hover{
+    box-shadow: 3px 3px 16px #2407ff;
+    background-color: var(--text);
+}
+#changebg{
+    border-radius: 50%;
+}
+#changebg1{
+    border-radius: 50%;
+}
+.darkmode{
+    --background:#1f242d;
+    --h3:rgba(255, 121, 121, 0.776); 
+    --img: #15191f;
+}
+
+@keyframes slideRight{
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideTop{
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+@keyframes slideBottom{
+    0%{
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft{
+    0%{
+        transform: translateX(100px);
+        opacity: 0;
+        
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+       
+    }
+}
+
+@keyframes zoomIn{
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes floatimage{
+    0%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50%{
+        transform: translateY(-24px);
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes slideLeft1{
+    0%{
+        transform: translateY(100px);
+        opacity: 1;
+    }
+    50%{
+        transform: scaleY(1);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* THIS IS FOR ABOUT */
+
+
+.abt{
+    position: relative;
+    width: 80%;
+    height: 100vh;
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+    padding: 70px 10%;
+}
+.abt h2{
+    margin: 4px;
+    padding: 12px;
+    color: var(--hover);
+    text-decoration: overline;
+    animation: slideRight 1s ease forwards;
+}
+.abt h3{
+    font-weight: 800;
+    color: var(--h3);
+    padding: 10px;
+}
+.st{
+    z-index: 999;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    box-shadow: 10px 0 -10px;
+}
+.abt .socials a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #07acff;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #0ef;
+    text-decoration: none;
+    margin: 30px 15px 14px 0;
+    box-shadow: 3px 3px 5px #07acff;
+    transition: 2s ease;
+    opacity: 1;
+    margin-top: 45px;
+}
+.abt .socials a:hover{
+    box-shadow: 3px 6px 16px #07acff;
+    transition:.5s ease;
+    background: #07acff;
+    transform: rotate(360deg);
+}
+.bar{
+    border-bottom: 7px solid var(--hover);
+    box-shadow: 10px 7px 5px #07acff;
+   
+}
+
+
+/* THIS IS FOR SKILL*/
+
+.skil{
+    position: relative;
+    width: 80%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    padding: 70px 10%;
+    display: block;
+}
+.lan{
+    display: inline;
+    font-weight: 700;
+    margin-top: 60px;
+}
+#eng{
+    padding: 4px;
+    background-color: var(--hover);
+    width: 1px;   
+    border: 1px solid; 
+    transition: width 7s;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+#eng:hover{
+    width: 90%;
+}
+#frn{
+    padding: 4px;
+    background-color: var(--hover);
+    width: 1px;   
+    border: 1px solid; 
+    transition: width 7s;
+    margin-bottom: 12px;
+}
+#frn:hover{
+    width: 44%;
+}
+#spn{
+    padding: 4px;
+    background-color: var(--hover);
+    width: 1px;   
+    border: 1px solid; 
+    transition: width 7s;
+    margin-bottom: 12px;
+}
+#spn:hover{
+    width: 30%;
+}
+
+.sl{
+    margin-top: 60px;
+}
+
+.sld{
+    display: flex;
+    aspect-ratio: 20/10;
+    overflow: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsl(0, 0%, 0%);
+    border-radius: 30px;
+    z-index: 999;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    animation: hov 4s linear infinite;
+    margin-top: 60px;
+    border: 0px solid black;
+}
+.sld img{
+    flex: 1 0 100%;
+    scroll-snap-align: flex;
+    object-fit: contain;
+    z-index: -1;
+    background: transparent;
+    backdrop-filter: blur(100%);
+    
+}
+.slider-nav{
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 1;
+    
+}
+.slider-nav a{
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: var(--hover);
+    opacity: 0.75;
+    transition: ani ease 3s;
+}
+.slider-nav a:hover{
+    opacity: 0.5;
+}
+.slider-nav a:active{
+    background-color: aqua;
+    transform: scale(2);
+}
+@keyframes ani{
+    0%{ opacity: 1;
+    transform: translateX(-25px) ;
+    }
+    50%{
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(-50px);
+    }
+}
+@keyframes hov{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-20px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
