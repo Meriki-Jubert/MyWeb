@@ -1,11 +1,12 @@
 *{
     padding: 0;
-    margin: 0;
+    margin: 0; 
 }
 body{
     background: var(--background);
     color: var(--text);
     text-decoration: none;
+   
 }
 :root{
     --background:rgba(91, 12, 12, 0.776);
@@ -491,6 +492,7 @@ header svg{
     background-color: var(--hover);
     opacity: 0.75;
     transition: ani ease 3s;
+    position: absolute;
 }
 .slider-nav a:hover{
     opacity: 0.5;
